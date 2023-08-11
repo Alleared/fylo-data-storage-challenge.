@@ -1,0 +1,2 @@
+Junior challenge from Frontendmentor. Fylo data storage component master. I learn a lot of new stuff with this challenge. I had difficult with the progress bar. I got introduced to -webkits and now I'm working on how they work. And also, for now on, I'm going to practice adding more tooltips in the future challenges. Any tips on how to make better balloon texts and how to add dot to the progress bar would be much appreciated. Thank you!
+*Progress bar styles only available on Chrome and Firefox.*

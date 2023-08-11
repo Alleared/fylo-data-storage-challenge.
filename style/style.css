@@ -1,0 +1,328 @@
+
+*, ::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* VARIABLES */
+
+:root {
+    /* || COLORS */
+    /* BACKGROUND COLORS */
+    --DARK-BLUE: hsl(228, 56%, 26%);
+    --VERY-DARK-BLUE:hsl(229, 57%, 11%);
+    
+    /* FONT AND GRADIENT COLORS */
+    --PALE-BLUE: hsl(243, 100%, 93%);
+    --GRAYISH-BLUE: hsl(229, 7%, 55%);
+    --GRADIENT-COLOR-1: hsl(6, 100%, 80%); 
+    --GRADIENT-COLOR-2: hsl(335, 100%, 65%);
+
+    
+    /* || BORDER RADIUS */
+
+    --BORDER-RADIUS: 10px;
+
+}
+
+/* MAIN STYLES */
+
+body {
+    font-size: .875rem;
+    font-family: 'Raleway', sans-serif;
+
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+
+    background-color: var(--VERY-DARK-BLUE);
+    background-image: url(../images/bg-desktop.png);
+    background-repeat: repeat-x; 
+    background-size: auto;
+    background-position: left 0vw top 50vh;
+}
+
+/* DATA STORAGE */
+
+article {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
+    align-items: end;
+    color: var(--PALE-BLUE);
+    margin: 2rem;
+}
+
+section {
+    background-color: var(--DARK-BLUE);
+}
+
+/* || FIRST SECTION */
+
+/* LOGO */
+
+.logo-section {
+    padding: 2rem 6rem 2rem 2rem;
+    border-radius: var(--BORDER-RADIUS) 80px var(--BORDER-RADIUS) var(--BORDER-RADIUS);
+}
+
+.logo-div {
+    margin: 1rem 0;
+}
+
+/* ICONS */
+
+.icon-container {
+    display: flex;
+    gap: 1rem;
+    align-items: start;
+}
+
+.icon-div {
+    background-color: var(--VERY-DARK-BLUE);
+    padding: .8rem 1rem;
+    border-radius: 10px;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    transition: background-color .5s;
+
+    /* REMINDER: background-image cannot be animated */
+    /* transition: background-image .5s;
+    -webkit-transition: background-image .5s; */
+
+}
+
+.icon-div:hover, .icon-div:focus {
+    background-color: var(--GRADIENT-COLOR-1);
+    opacity: .8;
+    
+    /* background-image: linear-gradient(to right, var(--GRADIENT-COLOR-1), var(--GRADIENT-COLOR-2)); */
+}
+
+.icon-div:hover img {
+    filter: brightness(0) saturate(100%) invert(7%) sepia(28%) saturate(2468%) hue-rotate(200deg) brightness(97%) contrast(100%);
+}
+
+/* TOOLTIPS STYLES */
+
+.document, .folder, .upload {
+    position: relative;
+    cursor: pointer;
+}
+
+.tooltip {
+    position: absolute;
+    opacity: 0;
+    background-color: var(--PALE-BLUE);
+    padding: .5rem;
+    border-radius: var(--BORDER-RADIUS);
+    color: var(--VERY-DARK-BLUE);
+    font-weight: 700;
+    pointer-events: none;
+    
+    transition: opacity .5s;
+}
+
+.document .tooltip {
+    top: 115%;
+    left: -45%;
+}
+
+.folder .tooltip {
+    top: 115%;
+    left: -10%;
+}
+
+.upload .tooltip {
+    top: 115%;
+    left: -10%;
+}
+
+.document:hover .tooltip, .folder:hover .tooltip, .upload:hover .tooltip {
+    opacity: 1;
+}
+
+/* || SECOND SECTION */
+
+/* STORAGE */
+
+.storage-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+    height: 70%;
+    min-width: 31.25rem;
+    position: relative;
+    border-radius: var(--BORDER-RADIUS);
+}
+
+
+/* SPACE LEFT STYLES */
+
+.space-left-div {
+    background-color: var(--PALE-BLUE);
+    color: black;
+    padding: 1rem 1.5rem;
+    position: absolute;
+    right: 10%;
+    top: -50%;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    border-radius: var(--BORDER-RADIUS);
+}
+
+.space-left {
+    display: flex;
+    align-items: center;
+    
+}
+
+.space-left-div span {
+    font-size: 3rem;
+    margin: 0 1rem;
+    font-weight: 700;
+}
+
+.triangle {
+    border-top: 25px solid transparent;
+    border-right: 50px solid var(--PALE-BLUE);
+    border-bottom: 60px solid transparent;
+    position: absolute;
+    right: -7.5%;
+    top: 40%;
+    z-index: -1;
+}
+
+
+/* TOTAL AVAILABLE */
+
+.storage-title-div {
+    margin: 1rem 0;
+}
+
+.storage-title-div span {
+    font-weight: 700;
+}
+
+.storage-size-div {
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
+    margin: .5rem 0;
+}
+
+/* PROGRESS BAR STYLES */
+
+#total-storage {
+    width: 95%;
+    height: 15px;
+    -webkit-appearance: none;
+}
+
+/* PROGRESS BAR STYLES AVAILABLE ONLY IN CHROME AND FIREFOX */
+#total-storage::-webkit-progress-value {
+    background-image: linear-gradient(to right, var(--GRADIENT-COLOR-1), var(--GRADIENT-COLOR-2));
+    border-radius: var(--BORDER-RADIUS);
+    position: relative;
+}
+
+#total-storage::after{
+    content: '';
+    background-color: var(--PALE-BLUE);
+    height: 11px;
+    width: 11px;
+    border-radius: 50%;
+    position: absolute;
+    top: 52%;
+    left: 72%;
+    z-index: 1;
+}
+
+#total-storage:hover {
+    cursor: pointer;
+}
+
+#total-storage::-webkit-progress-bar {
+    background-image: linear-gradient(to left, var(--VERY-DARK-BLUE), var(--DARK-BLUE));
+    border-radius: var(--BORDER-RADIUS);
+}
+
+#total-storage::-moz-progress-bar {
+    background-image: linear-gradient(to left, var(--VERY-DARK-BLUE), var(--DARK-BLUE));
+    border-radius: var(--BORDER-RADIUS);
+}
+
+@media (max-width: 800px) {
+
+    /* MAIN STYLES */
+    body {
+        background-image: url(../images/bg-mobile.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        background-position: left;
+    }
+
+    /* DATA STORAGE */
+    article {
+        grid-template-columns: 375px;
+        gap: .5rem;
+    }
+
+    /* || FIRST SECTION */
+
+    /* LOGO */
+
+    .logo-section {
+        padding: 2rem;
+        
+    }
+
+    .logo-div {
+        display: flex;
+    }
+
+    /* || SECOND SECTION */
+
+    /* STORAGE */
+
+    .storage-section {
+        min-width: auto;
+        margin-bottom: 3rem;
+    }
+
+    .space-left-div {
+        right: 23%;
+        top: 85%;
+    }
+
+    .triangle {
+        visibility: hidden;
+    }
+
+    /* TOTAL AVAILABLE */
+
+    .storage-title-div p {
+        font-size: 1.05rem;
+        text-align: center;
+    }
+
+    /* PROGRESS BAR STYLES */
+
+    #total-storage::after {
+        top: 53%;
+        left: 68.9%;
+    }
+
+
+}
+
+.attribution { font-size: 11px; text-align: center; color: var(--PALE-BLUE);}
+.attribution a { color: var(--PALE-BLUE); }

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <meta name="author" content="Alleared">
+  <meta name="description" content="Junior Frontendmentor Challenge">
+  
+  <title>Frontend Mentor | Fylo data storage component</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;1,400;1,700&display=swap" rel="stylesheet">
+  
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+
+  <main>
+
+    <article>
+      <section class="logo-section">
+
+        <div class="logo-div">
+          <img class="logo" src="images/logo.svg" alt="Logo Pic">
+        </div>
+        <div class="icon-container">
+          <div class="icon-div document">
+            <img src="images/icon-document.svg" alt="Document icon">
+            <span class="tooltip">Documents</span>
+          </div>
+          <div class="icon-div folder">
+            <img src="images/icon-folder.svg" alt="Folder icon">
+            <span class="tooltip">Folder</span>
+          </div>
+          <div class="icon-div upload">
+            <img src="images/icon-upload.svg" alt="Upload icon">
+            <span class="tooltip">Upload</span>
+          </div>
+
+        </div>
+      </section>
+
+      <section class="storage-section">
+        
+        <div class="space-left-div">
+          <span class="triangle">
+  
+          </span>
+          <div class="space-left">
+            <div><span>185</span> </div> <div><p>GB LEFT</p></div>
+          </div>
+        </div>
+
+        <div class="storage-title-div">
+          <p>You&apos;ve used <span>815 GB</span> of your storage</p>
+        </div>
+        <div>
+          <progress id="total-storage" value="81" max="100"></progress>
+        </div>
+
+        <div class="storage-size-div">
+          <div>
+            <p>0 GB</p>
+          </div>
+          <div>
+            <p>1000 GB</p>
+          </div>
+        </div>
+
+      </section>
+    </article>
+
+  </main>
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://www.frontendmentor.io/profile/Alleared" target="_blank">Alleared</a>.
+  </div>
+</body>
+</html>
